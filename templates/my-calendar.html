@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8'/>
+    <title>Calendar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300&display=swap" rel="stylesheet">'
+
+    <link rel='stylesheet' href='app-styles.css'/>
+
+    <style>
+    {% include 'app-styles.css' %}
+    .system-fonts {
+    font-family: sans-serif;
+  }
+  </style>
+  </head>
+  <body>
+    <header>
+      {% include 'navbar.html' %}
+      <div class='my-calendar'>
+          <h1>My Calendar </h1>
+        </div>
+    </header>
+  <iframe src="https://calendar.google.com/calendar/embed?src=9jag3767ln1gv28fp0ihchjb5s%40group.calendar.google.com&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no" align=center></iframe>
+
+  </body>
+</html>

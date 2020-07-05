@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'/>
+  <title>Welcome</title>
+  <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300&display=swap" rel="stylesheet">'
+  <link rel='stylesheet' href='app-styles.css'/>
+  <style>
+    {% include 'app-styles.css' %}
+    .system-fonts {
+    font-family: sans-serif;
+  }
+  </style>
+</head>
+<body>
+  <header>
+    {% include 'navbar.html' %}
+    <div class='home'>
+      <h1>Home</h1>
+    </div>
+  </header>
+
+    <div class='page'>
+      <section class='section section--info'>
+        <h2>The Gardener's Handbook</h2>
+        <p>Regardless of what stage in the gardening process you are at,
+          The Gardener's Handbook has something for you! We all have busy lives,
+          which can be even more stressful now with the global pandemic, so it’s
+          important to find some time to relax and destress during this storm.
+          The Gardener's Handbook has resources for you to learn about several
+          plants and how to grow your garden - the way you want it! Check out
+           the tabs above to begin.
+</p>
+      </section>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'/>
+  <title>Weather</title>
+  <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300&display=swap" rel="stylesheet">'
+
+  <link rel='stylesheet' href='app-styles.css'/>
+  <style>
+    {% include 'app-styles.css' %}
+    .system-fonts {
+    font-family: 'Muli', sans-serif;
+  }
+  </style>
+</head>
+<body>
+  <header>
+    {% include 'navbar.html' %}
+    <div class='Weather'>
+      <h1>Local Weather</h1>
+    </div>
+
+  </header>
+
+  <div class='page'>
+    <section class='section section--weather'>
+      <label>Weather</label>
+      <textarea>{{ description }}</textarea>
+      <label>Temperature</label>
+      <textarea>{{ temperature }}, feels like {{ feelslike }} </textarea>
+      <ul>
+        <li>
+          <br>
+          <br>{{ tips }}</li>
+      </ul>
+
+
+    </section>
+    </div>
+  </body>
+</html>

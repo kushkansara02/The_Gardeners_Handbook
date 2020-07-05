@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body {
+  color: #5D6063;
+  background-color: #90EE90;
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 1.3;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.new-user-submission-header,
+.old-submission-header
+ {
+  text-align: center;
+  background-color: #F6F7F8;
+  border: 1px solid #D6D9DC;
+  border-radius: 3px;
+
+  width: 80%;
+  margin: 40px 0;
+  padding: 50px;
+}
+
+.new-user-submission-header h1,
+.old-submission-header h1 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.submission-form {
+  background-color: #F6F7F8;
+  border: 1px solid #D6D9DC;
+  border-radius: 3px;
+
+  width: 80%;
+  padding: 50px;
+  margin: 0 0 40px 0;
+}
+.form-row {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+/* Selector called "attribute selector" Only matches the input elements that have
+a type attribute equal to text; targer text fields */
+.form-row input[type='text'],
+.form-row input[type='email']{
+  background-color: #FFFFFF;
+  border: 1px solid #D6D9DC;
+  border-radius: 3px;
+  width: 100%;
+  padding: 7px;
+  font-size: 14px;
+}
+
+.form-row label {
+  margin-bottom: 15px;
+}
+
+.form-row textarea {
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size: 14px;
+
+  border: 1px solid #D6D9DC;
+  border-radius: 3px;
+
+  min-height: 200px;
+  margin-bottom: 10px;
+  padding: 7px;
+  resize: none;
+}
+
+
+.form-row button {
+  font-size: 16px;
+  font-weight: bold;
+
+  color: #5D6063;
+  background-color: #F6F7F8;
+
+  border: none;
+  border-radius: 3px;
+
+  padding: 10px 40px;
+  cursor: pointer;
+}
+
+.form-row button:hover {
+  background-color: #FFF0F5;
+}
+
+.form-row button:active {
+  background-color: #F0FFF0;
+}
+
+/* desktop styles */
+@media only screen and (min-width: 700px) {
+  .new-user-submission-header,
+  .old-submission-header,
+  .submission-form {
+    width: 600px;
+  }
+  .form-row {
+    flex-direction: column;
+    align-items: flex-start; /* To avoid stretching */
+    margin-bottom: 20px;
+  }
+  .form-row input[type='text'],
+  .form-row input[type='email'],
+  .form-row textarea {
+    width: 250px;
+    height: initial;
+  }
+  .form-row label {
+    text-align: left;
+    width: 120px;
+    margin-top: 7px;
+    padding-right: 20px;
+  }
+  .form-row button {
+
+
+  }
+}
+.form-row input[type='text']:invalid,
+.form-row input[type='email']:invalid {
+  border: 1px solid #D55C5F;
+  color: #D55C5F;
+  box-shadow: none; /* Remove default red glow in Firefox */
+}

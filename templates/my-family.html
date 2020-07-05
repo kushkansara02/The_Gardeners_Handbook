@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'/>
+  <title>My Family</title>
+  <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300&display=swap" rel="stylesheet">'
+
+  <link rel='stylesheet' href='app-styles.css'/>
+  <style>
+    {% include 'app-styles.css' %}
+    .system-fonts {
+    font-family: sans-serif;
+  }
+  </style>
+</head>
+<body>
+  <header>
+    {% include 'navbar.html' %}
+    <div class='my-family'>
+      <h1>My Family</h1>
+    </div>
+  </header>
+
+  <div class='page'>
+    <section class='section section--code'>
+      <h2>Family Code</h2>
+      <p>2dcs</p>
+  </section>
+
+    <section class='section section--members'>
+      <h2>Family Members</h2>
+      <ul>
+        <li> Shaili
+        <li> Kush
+        <li> Josh
+        <li> Shivani
+      </ul>
+
+</section>
+
+    </div>
+
+</body>
+</html>

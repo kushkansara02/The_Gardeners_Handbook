@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'/>
+  <title>My Mood</title>
+  <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300&display=swap" rel="stylesheet">'
+
+  <link rel='stylesheet' href='app-styles.css'/>
+  <style>
+      {% include 'app-styles.css' %}
+    .system-fonts {
+    font-family: sans-serif;
+  }
+  </style>
+</head>
+<body>
+  <header>
+      {% include 'navbar.html' %}
+      <div class='my-family'>
+        <h1>Daily Tracker</h1>
+        <p style="background-color:Olive;">Take a few minutes each day to track your feelings after you've
+          spent some time outdoors.</p>
+      </div>
+  </header>
+  {% load staticfiles %}
+  <fieldset class='mood-form-row'>
+      <legend>My Mood</legend>
+      <input id=mood-1'
+         name='mood-1'
+         type='radio'
+         value='happy' />
+      <label for='mood-1' class='radio-label'>Happy</label>
+      <img src ="{% static 'mymood/unknown(4).png' %}" width ='65' alt='A  green happy face'/>
+
+      <input id=mood-2'
+         name='mood-2'
+         type='radio'
+         value='good' />
+      <label for='mood-2' class='radio-label'>Good </label>
+      <img src="{% static 'mymood/unknown(3).png' %}" width ='65' alt='A lime-green smiley face'/>
+
+      <input id=mood-3'
+         name='mood-3'
+         type='radio'
+         value='fine' />
+      <label for='mood-3' class='radio-label'>Fine </label>
+      <img src="{% static 'mymood/unknown(2).png' %}" text-align:center width ='65' alt='A yellow neutral face'/>
+
+
+      <input id=mood-4'
+         name='mood-4'
+         type='radio'
+         value='bad' />
+      <label for='mood-4' class='radio-label'>Bad  </label>
+      <img src="{% static 'mymood/unknown(1).png' %}" align: center width ='65' alt='An orange frown'/>
+
+      <input id=mood-5'
+         name='mood-5'
+         type='radio'
+         value='Awful' />
+      <label for='mood-5' class='radio-label'>Awful</label>
+      <img src="{% static 'mymood/unknown.png' %}" width ='65' alt='A red frown'/>
+
+
+
+  </body>
+</html>

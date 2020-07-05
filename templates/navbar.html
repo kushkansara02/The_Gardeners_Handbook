@@ -1,0 +1,24 @@
+{% load static %}
+
+
+<style>
+  .hello-msg{
+    font-size: 18px;
+    color: #fff;
+    margin-right: 20px;
+  }
+</style>
+
+<nav>
+        <ul>
+            <li class = 'selected'>Welcome, {{ request.user }}</li>
+          <li class='selected'><a href="{% url 'userhome' %}">Home</li>
+          <li><a href="{% url 'myfamily' %}">My Family</a></li>
+          <li><a href="{% url 'mygarden' %}">My Garden</a></li>
+          <li><a href="{% url 'weather' %}">Weather</a></li>
+          <li><a href="{% url 'mycalendar' %}">My Calendar</a></li>
+          <li><a href="{% url 'sustainabilitytips' %}">Sustainability Tips</a></li>
+          <li><a href="{% url 'mymood' %}">My Mood</a></li>
+            <li><a href="{% url 'logout' %}">Log Out</a></li>
+        </ul>
+</nav>

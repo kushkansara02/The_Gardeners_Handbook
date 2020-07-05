@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'/>
+  <title>My Garden</title>
+  <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300&display=swap" rel="stylesheet">'
+
+  <link rel='stylesheet' href='app-styles.css'/>
+  <style>
+    {% include 'app-styles.css' %}
+    .system-fonts {
+      font-family: sans-serif;
+
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #26209c !important;
+    }
+
+    .user_card {
+      width: 350px;
+      margin-top: auto;
+      margin-bottom: auto;
+      background: #16cee8;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding: 10px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      border-radius: 5px;
+
+    }
+
+    .form_container {
+      margin-top: 20px;
+    }
+
+    #form-title {
+      color: #fff;
+    }
+
+    .login_btn {
+      width: 100%;
+      background: #33ccff !important;
+      color: white !important;
+    }
+
+    .login_btn:focus {
+      box-shadow: none !important;
+      outline: 0px !important;
+    }
+
+    .login_container {
+      padding: 0 2rem;
+    }
+
+    .input-group-text {
+      background: #f7ba5b !important;
+      color: white !important;
+      border: 0 !important;
+      border-radius: 0.25rem 0 0 0.25rem !important;
+    }
+
+    .input_user,
+    .input_pass:focus {
+      box-shadow: none !important;
+      outline: 0px !important;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    {% include 'navbar.html' %}
+    <div class='my-family'>
+      <h1>My Garden</h1>
+    </div>
+    </header>
+    <div class='page'>
+      <section class='section section--my-plants'>
+        <h2>My Plants</h2>
+        <ul>
+          {% for flower in flowers %}
+          <h3>{{ flower.name }}</h3>
+          <ul>
+            <li>Life cycle: {{ flower.lifecycle }}</li>
+            <li>Sun requirements: {{ flower.sunRequirements }}</li>
+            <li>Plant height: {{ flower.plantHeight }}</li>
+            <li>Structure: {{ flower.structure }}</li>
+            <li>Plant time: {{ flower.plantTime }}</li>
+            <li>Flower time: {{ flower.flowerTime }}</li>
+            <li>Water cycle: Every {{ flower.waterCycle }} days</li>
+          </ul>
+          {% endfor %}
+        </ul>
+      </section>
+      <section class='section section--new-plants'>
+        <h2>New Plants</h2>
+          <label for ='new-plants'>Find New Plants</label>
+            <select name="new-plants" id="new-plants">
+              {% for plant in allFlowers %}
+              {% if plant not in flowers %}
+              <option value = {{ plant.name }}>{{ plant.name }}</option>
+              {% endif %}}
+              {% endfor %}
+            </select>
+        <div class='form-row'>
+          <button>Submit</button>
+        </div>
+      </section>
+      <section class='section section--wishlist'>
+        <h2>Wish List</h2>
+          <label for ='wishlist'>Add plants to your wishlist</label>
+        <form method="post" action="">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <div class="d-flex justify-content-center mt-3 login_container">
+            <input class="btn login_btn" type="submit" value="This is my wishlist">
+          </div>
+        </form>
+            <div class='form-row'>
+              <h3>Your Wishlist:</h3>
+              <ul>
+                {% for flower in wishlist %}
+                <li class="section--wishlist">{{ flower.name }}</li>
+                {% endfor %}
+              </ul>
+
+            </div>
+      </section>
+    </div>
+</body>
+</html>
